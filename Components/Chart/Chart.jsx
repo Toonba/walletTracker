@@ -1,8 +1,7 @@
 import { createChart, ColorType } from 'lightweight-charts'
 import React, { useEffect, useRef } from 'react'
 
-export default function ChartComponent({data, colors}) {
-  
+export default function ChartComponent({ data, colors }) {
   const chartContainerRef = useRef()
 
   useEffect(() => {
@@ -15,13 +14,32 @@ export default function ChartComponent({data, colors}) {
         background: { type: ColorType.Solid, color: colors.backgroundColor },
         textColor: colors.textColor
       },
+      grid: {
+        vertLines: { color: '#5b5959' },
+        horzLines: { color: '#5b5959' }
+      },
       width: chartContainerRef.current.clientWidth,
-      height: 300
+      height: 400
     })
     chart.timeScale().fitContent()
+    chart.applyOptions({
+      crosshair: {
+        // Vertical crosshair line (showing Date in Label)
+        vertLine: {
+          color: 'white',
+          labelBackgroundColor: 'white'
+        },
 
-    const newSeries = chart.addAreaSeries({ lineColor: colors.lineColor, topColor: colors.areaTopColor, bottomColor: colors.areaBottomColor })
-    newSeries.setData(data)
+        // Horizontal crosshair line (showing Price in Label)
+        horzLine: {
+          color: 'white',
+          labelBackgroundColor: 'white'
+        }
+      }
+    })
+
+    const lineSeries = chart.addLineSeries({ color: '#2962FF' })
+    lineSeries.setData(data)
 
     window.addEventListener('resize', handleResize)
 
@@ -32,5 +50,5 @@ export default function ChartComponent({data, colors}) {
     }
   }, [data, colors])
 
-  return <div ref={chartContainerRef} />
+  return <div className='chartContainer' ref={chartContainerRef} />
 }
