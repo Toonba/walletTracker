@@ -1,0 +1,28 @@
+.inputSection {
+  width: 100%;
+  margin: 100px 0;
+}
+
+.form {
+  width: 75%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.label {
+  color: white;
+}
+.input {
+  width: 45%;
+  padding: 8px;
+  border-radius: 15px;
+  border: none;
+}
+
+.button {
+  border-radius: 20px;
+  border: none;
+}

@@ -1,0 +1,23 @@
+.summaryContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  background-color: #2d2d2d;
+  width: 25%;
+  aspect-ratio: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 20px;
+  padding: 15px 10px;
+  border-radius: 20px;
+}
+
+.balance {
+  text-align: center;
+  margin-top: 20px;
+}
