@@ -3,6 +3,7 @@ import { getBalance } from '../Service/web3'
 import ChartComponent from '../Components/Chart/Chart'
 import AddressInput from '../Components/AddressInput/AddressInput'
 import DataSummary from '../Components/DataSummary/DataSummary'
+import SelectRange from '../Components/SelectRange/SelectRange'
 import { Provider } from 'react-redux'
 import { useSelector } from 'react-redux'
 import store from '../Store/store'
@@ -38,17 +39,33 @@ const initialData = [
   { time: '2019-01-18', value: 22.68 }
 ]
 
+const data7days = [
+  { time: '2023-08-04', value: 267 },
+  { time: '2023-08-05', value: 172 },
+  { time: '2023-08-06', value: 53.1 },
+  { time: '2023-08-07', value: 325.9 },
+  { time: '2023-08-08', value: 12.67 },
+  { time: '2023-08-09', value: 76.86 },
+  { time: '2023-08-10', value: 427.1 }
+]
+
 export default function WalletTracker() {
-  const [myData, setMyData] = useState()
+  const [myData, setMyData] = useState([])
   const currentBalance = useSelector((state) => state.currentBalance)
   const inputValue = useSelector((state) => state.inputValue)
+  const range = useSelector((state) => state.selectRangeValue)
+
+  useEffect(() => {
+    range === 7 ? setMyData(data7days) : setMyData(initialData)
+  }, [range])
 
   return (
     <Provider store={store}>
       <h1>Track Your Performance</h1>
       <DataSummary input={inputValue} currentBalance={currentBalance} />
       <AddressInput />
-      <ChartComponent data={initialData} colors={{ backgroundColor: '#121212', textColor: 'white', areaTopColor: '#BB86FC', areaBottomColor: 'rgba(41, 98, 255, 0.28)' }}></ChartComponent>
+      <SelectRange />
+      {inputValue === '' ? null : <ChartComponent data={myData} colors={{ backgroundColor: '#121212', textColor: 'white', areaTopColor: '#BB86FC', areaBottomColor: 'rgba(41, 98, 255, 0.28)' }}></ChartComponent>}
     </Provider>
   )
 }

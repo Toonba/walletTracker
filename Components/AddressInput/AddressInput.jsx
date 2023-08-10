@@ -22,8 +22,6 @@ export default function AddressInput() {
   const handleSubmit = (event) => {
     event.preventDefault()
     dispatch(setInputValue(address))
-    console.log('coucou')
-    console.log(address)
   }
 
   useEffect(() => {

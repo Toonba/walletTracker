@@ -1,0 +1,27 @@
+.selectRangeSection {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.rangeContainer {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  column-gap: 20px;
+  align-items: center;
+}
+
+.rangeChoice {
+  padding: 5px;
+  border: 1px solid #2962ff;
+  border-radius: 5px;
+}
+.rangeChoice:hover {
+  cursor: pointer;
+  background-color: #2962ff;
+}
+
+.active {
+  background-color: #2962ff;
+}
