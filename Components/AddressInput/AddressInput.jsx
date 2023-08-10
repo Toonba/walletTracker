@@ -24,16 +24,11 @@ export default function AddressInput() {
     dispatch(setInputValue(address))
   }
 
-  useEffect(() => {
-    const fetchData = async () => {
-      if (inputValue !== '') {
-        const result = await getBalance(inputValue)
-        dispatch(setCurrentBalance(result))
-      }
-    }
-
-    fetchData()
-  }, [inputValue])
+  // useEffect(() => {
+  //     if (inputValue !== '') {
+  //       dispatch
+  //     }
+  //   }, [inputValue])
 
   return (
     <section className={styles.inputSection}>

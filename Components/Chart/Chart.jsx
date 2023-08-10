@@ -19,7 +19,7 @@ export default function ChartComponent({ data, colors }) {
         horzLines: { color: '#5b5959' }
       },
       width: chartContainerRef.current.clientWidth,
-      height: 400
+      height: 600
     })
     chart.timeScale().fitContent()
     chart.applyOptions({
