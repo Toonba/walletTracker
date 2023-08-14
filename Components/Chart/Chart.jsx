@@ -1,5 +1,6 @@
 import { createChart, ColorType } from 'lightweight-charts'
 import React, { useEffect, useRef } from 'react'
+import Loader from '../Loader/Loader'
 
 export default function ChartComponent({ data, colors, isLoading }) {
   const chartContainerRef = useRef()
@@ -55,7 +56,7 @@ export default function ChartComponent({ data, colors, isLoading }) {
       <div ref={chartContainerRef} />
       {isLoading === true ? (
         <div className="chartLoading">
-          <p>Loading</p>
+          <Loader/>
         </div>
       ) : null}
     </div>

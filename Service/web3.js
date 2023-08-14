@@ -13,11 +13,10 @@ function getTimestampForTodayAt12And13() {
 }
 
 function getTimestampForAllDayInRange(range, timestampAt12, timestampAt13) {
-  let timestampForAllDayInRange = []
+  let timestampForAllDayInRange = [[new Date().getTime() - 3600000, new Date().getTime()]]
   for (let i = 1; i < range; i++) {
     timestampForAllDayInRange.push([timestampAt12 - i * 86400000, timestampAt13 - i * 86400000])
   }
-
   return timestampForAllDayInRange.reverse()
 }
 
@@ -95,8 +94,6 @@ export async function getData(address, range) {
   const blockNumberForEachTimestampRange = await Promise.all(blockNumberForEachTimestampRangePromises)
   const balanceForEachBlockInRangePromises = await getBalanceForEachBlockInRange(blockNumberForEachTimestampRange, address)
   const balanceForEachBlockInRange = await Promise.all(balanceForEachBlockInRangePromises)
-  console.log(balanceForEachBlockInRange)
-  console.log(dateForAllDayInRange)
   const formatedData = getFormatedDataToDrawChart(dateForAllDayInRange, balanceForEachBlockInRange)
   return formatedData
 }
