@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { getData } from '../Service/web3'
-import { getUsdPrice, getUsdBalance } from '../Service/getUSDPrice'
+import { getUsdPrice, getUsdBalance } from '../Service/getUsdData'
 import ChartComponent from '../Components/Chart/Chart'
 import AddressInput from '../Components/AddressInput/AddressInput'
 import DataSummary from '../Components/DataSummary/DataSummary'
