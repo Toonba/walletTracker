@@ -30,7 +30,7 @@ export default function WalletTracker() {
       setIsLoading(true)
       if (inputValue !== '') {
         try {
-          const cryptoResult = await getData(inputValue, range)
+          const cryptoResult = await getData(inputValue.trim(), range)
           const usdResult = await getUsdPrice(avalancheChainId, range)
           // setUsdPriceData(usdResult)
           setCryptoBalance(cryptoResult)
