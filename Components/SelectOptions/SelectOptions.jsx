@@ -21,7 +21,6 @@ export default function SelectRange() {
   return (
     <section className={styles.selectOptionsSection}>
       <div className={styles.rangeContainer}>
-        <p>Last</p>
         <button className={`${styles.rangeChoice} ${rangeActive === 0 ? styles.active : ''} `} onClick={() => handleSelectRangeChange(7, 0)}>
           7 Days
         </button>
@@ -36,7 +35,6 @@ export default function SelectRange() {
         </button>
       </div>
       <div className={styles.currencyContainer}>
-        <p>Show Balance in </p>
         <button className={`${styles.currencyChoice} ${currencyActive === 0 ? styles.active : ''} `} onClick={() => handleSelectCurrencyChange('crypto', 0)}>
           AVAX
         </button>

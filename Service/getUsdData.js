@@ -39,7 +39,7 @@ export function getUsdBalance(cryptoBalanceData, usdPriceData) {
     if (usdMatchingPrice) {
       return {
         time: balanceItem.time,
-        value: balanceItem.value * usdMatchingPrice.price
+        value: parseFloat((balanceItem.value * usdMatchingPrice.price).toFixed(2))
       }
     } else {
       console.log(`No usdPrice for ${balanceItem.time}`)

@@ -63,6 +63,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 20px;
 }
 
 h1 {
@@ -70,4 +71,13 @@ h1 {
   text-align: center;
   font-size: 4rem;
   margin: 40px 0;
+}
+
+@media (max-width: 850px) {
+  h1 {
+    font-size: 3rem;
+  }
+  .chartContainer {
+    padding: 5px;
+  }
 }

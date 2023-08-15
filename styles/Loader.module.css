@@ -33,3 +33,15 @@
     transform: rotate(360deg);
   }
 }
+
+@media (max-width: 850px) {
+  .loaderRing {
+    width: 40px;
+    height: 40px;
+    margin-top: -10px;
+  }
+  .loaderRing div {
+    width: 32px;
+    height: 32px;
+  }
+}

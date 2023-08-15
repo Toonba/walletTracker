@@ -63,7 +63,7 @@ async function getBlockNumberForEachTimestampRange(timestampForAllDayInRange) {
 
 async function getBalanceForSpecificBlockNumber(address, blockNumber) {
   const balanceInWei = await web3.eth.getBalance(address, blockNumber)
-  const balanceInAVAX = parseFloat((Number(balanceInWei) / 1e18).toFixed(4))
+  const balanceInAVAX = parseFloat((Number(balanceInWei) / 1e18).toFixed(2))
   return balanceInAVAX
 }
 

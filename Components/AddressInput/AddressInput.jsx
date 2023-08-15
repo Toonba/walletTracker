@@ -21,10 +21,10 @@ export default function AddressInput() {
   return (
     <section className={styles.inputSection}>
       <form className={styles.form} action="" onSubmit={handleSubmit}>
-        <label className={styles.label} htmlFor="addy">
+        {/* <label className={styles.label} htmlFor="addy">
           What's your address
-        </label>
-        <input className={styles.input} type="text" id="addy" name="addy" onChange={handleInputChange} value={address} placeholder="0xA22BCe5a3CB160399bD30E74D5e8B16D3C0c2d6B" />
+        </label> */}
+        <input className={styles.input} type="text" id="addy" name="addy" onChange={handleInputChange} value={address} placeholder="Avalanche C-Chain Address" />
         <button className={styles.button}>Show me</button>
       </form>
     </section>

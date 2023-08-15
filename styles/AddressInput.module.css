@@ -1,6 +1,7 @@
 .inputSection {
   width: 100%;
-  margin: 100px 0;
+  max-width: 1440px;
+  margin: 100px auto;
 }
 
 .form {
@@ -25,4 +26,20 @@
 .button {
   border-radius: 20px;
   border: none;
+}
+
+@media (max-width: 850px) {
+  .inputSection {
+    margin: 20px auto;
+  }
+  .form {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .input {
+    min-width: 250px;
+    max-width: 250px;
+    margin-bottom: 10px;
+  }
 }

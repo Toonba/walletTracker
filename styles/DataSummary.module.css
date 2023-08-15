@@ -1,12 +1,16 @@
 .summaryContainer {
+  max-width: 1440px;
   width: 100%;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .card {
   background-color: #2d2d2d;
   width: 25%;
+  max-width: 300px;
   aspect-ratio: 3;
   display: flex;
   flex-direction: column;
@@ -21,4 +25,16 @@
 .balance {
   text-align: center;
   margin-top: 20px;
+}
+
+@media (max-width: 850px) {
+  .summaryContainer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .card {
+    min-width: 250px;
+    aspect-ratio: 3;
+  }
 }
