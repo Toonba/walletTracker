@@ -80,9 +80,9 @@ export default function WalletTracker() {
   return (
     <Provider store={store}>
       <h1>Track Your Performance</h1>
-      <DataSummary input={inputValue} currentBalance={currentBalance} maxBalance={maxBalance} minBalance={minBalance} isLoading={isLoading} currency={currency} />
       <AddressInput />
-      <SelectOptions />
+      {inputValue === '' ? null : <DataSummary input={inputValue} currentBalance={currentBalance} maxBalance={maxBalance} minBalance={minBalance} isLoading={isLoading} currency={currency} />}
+      {inputValue === '' ? null : <SelectOptions />}
       {inputValue === '' ? null : currency === 'crypto' ? <ChartComponent data={cryptoBalance} colors={{ backgroundColor: '#121212', textColor: 'white', areaTopColor: '#BB86FC', areaBottomColor: 'rgba(41, 98, 255, 0.28)' }} isLoading={isLoading}></ChartComponent> : <ChartComponent data={usdBalance} colors={{ backgroundColor: '#121212', textColor: 'white', areaTopColor: '#BB86FC', areaBottomColor: 'rgba(41, 98, 255, 0.28)' }} isLoading={isLoading}></ChartComponent>}
     </Provider>
   )

@@ -1,15 +1,16 @@
 .loaderRing {
   display: inline-block;
   position: relative;
-  width: 80px;
-  height: 80px;
+  width: 40px;
+  height: 40px;
+  margin: -15px;
 }
 .loaderRing div {
   box-sizing: border-box;
   display: block;
   position: absolute;
-  width: 64px;
-  height: 64px;
+  width: 32px;
+  height: 32px;
   margin: 8px;
   border: 8px solid #fff;
   border-radius: 50%;
@@ -31,17 +32,5 @@
   }
   100% {
     transform: rotate(360deg);
-  }
-}
-
-@media (max-width: 850px) {
-  .loaderRing {
-    width: 40px;
-    height: 40px;
-    margin-top: -10px;
-  }
-  .loaderRing div {
-    width: 32px;
-    height: 32px;
   }
 }

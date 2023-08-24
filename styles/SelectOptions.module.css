@@ -7,8 +7,7 @@
   align-items: center;
 }
 
-.rangeContainer,
-.currencyContainer {
+.containerChoice {
   width: 50%;
   margin: 20px auto;
   display: flex;
@@ -17,8 +16,7 @@
   align-items: center;
 }
 
-.rangeChoice,
-.currencyChoice {
+.buttonChoice {
   padding: 8px;
   border: 1px solid #2962ff;
 
@@ -26,8 +24,7 @@
   background-color: transparent;
   color: white;
 }
-.rangeChoice:hover,
-.currencyChoice:hover {
+.buttonChoice:hover{
   cursor: pointer;
   background-color: #2962ff;
 }
